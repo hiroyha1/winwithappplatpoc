@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'healthcareweb1025'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_a42af3a7ce694accb1a01ae54cc3739e }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5EB9423F50354939AB2D2229F3359DD8 }}
           package: .

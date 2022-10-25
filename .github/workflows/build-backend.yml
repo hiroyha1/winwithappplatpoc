@@ -5,12 +5,12 @@ on:
     branches:
     - 'main'
     paths:
-    - 'Humongous.Healthcare.Web/**'
+    - 'Humongous.Healthcare/**'
   workflow_dispatch:
     
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: hiroyha1/humongoushealthcareweb
+  IMAGE_NAME: hiroyha1/humongoushealthcare
 
 jobs:
   build-and-push-image:
@@ -49,10 +49,10 @@ jobs:
       id: docker_build
       uses: docker/build-push-action@v2
       with:
-        context: ./src/backapi/
+        context: ./Humongous.Healthcare/
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-        file: ./src/backapi/Dockerfile.distroless
+        file: ./Humongous.Healthcare/Dockerfile
         push: ${{ github.event_name != 'pull_request' }}
         
     - name: Image digest
